@@ -1,5 +1,5 @@
 
-@extends('layout\app')
+@extends('layout.app')
 @section('title', $post->title)
 @section('content')
     
