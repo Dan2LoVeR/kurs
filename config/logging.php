@@ -124,16 +124,14 @@ return [
         ],
 
         'emergency' => [
-            'driver' => 'daily',
-            'path' => storage_path('logs/emergency.log'),
-            'level' => 'debug',
+            'path' => storage_path('logs/laravel.log'),
         ],
 
         'file' => [
             'driver' => 'daily',
-            'path' => storage_path('logs/php-deprecation-warnings.log'),
+            'path' => storage_path('logs/laravel.log'),
             'level' => 'debug',
-            'days' => 7,
+            'days' => 14,
         ],
     ],
 
