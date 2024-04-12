@@ -1,5 +1,5 @@
 @extends('layout\app')
-@section('title', 'Профель')
+@section('title', 'Профиль')
 @section('content')
 @include('partials.header')
 
