@@ -1,16 +1,16 @@
 <section class="space-y-6">
     <header>
-        <h2 class="text-lg font-medium text-white">
+        <h2 class="text-lg font-medium text-black">
             {{ __('Удалить Аккаунт') }}
         </h2>
 
-        <p class="mt-1 text-sm text-white">
+        <p class="mt-1 text-sm text-black">
             {{ __('После удаления вашей учетной записи все ее ресурсы и данные будут удалены без возможности восстановления. Прежде чем удалять свою учетную запись, загрузите все данные или информацию, которую вы хотите сохранить.') }}
         </p>
     </header>
 
     <button
-    class="rounded-xl px-5  py-3 w-50 overflow-hidden border-2 shadow relative bg-indigo-700 text-white hover:bg-opacity-90 hover:bg-white hover:text-indigo-700 "
+    class="rounded-xl px-5  py-3 w-50 overflow-hidden border-2 shadow relative bg-stone-400 text-white hover:bg-opacity-90 hover:bg-white hover:text-stone-400 "
     onclick="openModal('modelConfirm')"
     >{{ __('Удалить Аккаунт') }}</button>
 
@@ -24,11 +24,11 @@
                 @csrf
                 @method('delete')
     
-                <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                    {{ __('Are you sure you want to delete your account?') }}
+                <h2 class="text-lg font-medium text-gray-900">
+                    {{ __('Вы уверены что хотите удалить свой аккааунт?') }}
                 </h2>
     
-                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                <p class="mt-1 text-sm text-gray-600">
                     {{ __('После удаления вашей учетной записи все ее ресурсы и данные будут удалены без возможности восстановления. Пожалуйста, введите свой пароль, чтобы подтвердить, что вы хотите навсегда удалить свою учетную запись.') }}
                 </p>
     

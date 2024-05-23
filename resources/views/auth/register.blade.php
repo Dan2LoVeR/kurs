@@ -3,7 +3,21 @@
 @section('content')
     
 
-        <div class="w-screen animated-background h-screen bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-700 flex flex-col space-y-10 justify-center items-center">
+        <div class="w-screen animated-background h-screen flex flex-col space-y-10 justify-center items-center">
+            <div class="area">
+                <ul class="circles" class="h-full">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
             <div class="bg-white w-96 shadow-xl rounded p-5">
                 <h1 class="text-3xl font-medium">Регистрация</h1>
 
@@ -55,11 +69,19 @@
                     @enderror
 
 
-                    <div>
-                        <a href="{{route("login")}}" class="font-medium text-blue-900 hover:bg-blue-300 rounded-md p-2">Есть аккаунт?</a>
+                    <div class="sm:mb-0 mt-10 self-center flex flex-wrap justify-center ">
+                    <div class="relative inline-flex group mt-10">
+                        <div
+                            class="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
+                        </div>
+                        <button type="submit"  title="Get quote now"
+                                class="relative inline-flex items-center justify-center px-10 py-2 text-lg font-bold text-black transition-all duration-200 border-black border-2 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                                role="button">Зарегистрироваться
+                        </button>
                     </div>
-
-                    <button type="submit" class="text-center w-full bg-blue-900 rounded-md text-white py-3 font-medium">Зарегистрироваться</button>
+                    <div class="mt-3">
+                        <a href="{{route("login")}}" class="ml-2  font-medium relative text-black hover:text-gray-400 cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-gray-400 before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-gray-400 after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">Есть аккаунт?</a>
+                    </div></div>
                 </form>
             </div>
         </div>

@@ -1,59 +1,46 @@
-<nav class="font-sans flex flex-col text-center content-center sm:flex-row sm:text-left sm:justify-between py-2 px-6 bg-white shadow sm:items-baseline w-full md:max-w-6xl mx-auto rounded-b-xl">
-      <div class="mb-2 sm:mb-0 inner">
 
-          <a href="{{route("home")}}" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark font-sans font-bold">ИЦКЦ</a><br>
-          <span class="text-xs text-grey-dark">Исакогорско-Цигломенский культурный центр</span>
-
-      </div>
-
-      <div class="sm:mb-0 self-center flex flex-wrap justify-between ">
-            @guest("web")
-            <a href="{{route("login")}}" type="button" id="bt" class="rounded px-5 py-3 min-w-max overflow-hidden shadow relative bg-indigo-700 text-white hover:bg-opacity-90">Войти</a>
-            @endguest
-
-            @auth("web")
-
+<div class="fixed  z-50 w-100 px-8 py-2 transition-all duration-1000 rounded-full mt-4 mb-10 max-w-2xl inset-x-0 mx-auto ease-in-out transform " :class="{ 'bg-black bg-opacity-90 backdrop-blur-xl max-w-4xl ': !atTop, 'max-w-2xl': atTop }" @scroll.window="atTop = (window.pageYOffset > 50 ? false : true)">
+  <!-- This div is styled to change its appearance based on the scroll position, toggling classes for background, opacity, blur, and width. -->
+  <div x-data="{ open: false }" class="flex flex-col w-full p-2 mx-auto md:items-center md:justify-between md:flex-row">
+   <!-- Another Alpine.js component for handling the navigation menu's open/close state. -->
+   <div class="flex flex-row items-center justify-between"> <span class="font-bold tracking-tighter text-black uppercase" :class="{ 'text-black': atTop, 'text-white': !atTop }">
+     <!-- This span changes color based on the scroll position, using the `atTop` state. -->
+     <a href="{{route("home")}}" class="text-3xl  font-extrabold">⨝</a>
+    </span> 
+    <button class="md:hidden  focus:outline-none ">
+      
+        @guest("web")
+          <a :class="{ 'text-black': atTop, 'text-white': !atTop }" href="{{route("login")}}" class="text-black">Войти</a>
+        @endguest
             
-              <div class="group relative cursor-pointer py-2">
-          
-                  <div class="flex items-center justify-between space-x-5 bg-white px-4">
-                      <a class="menu-hover my-2 py-2 text-base font-medium text-black lg:mx-4" onClick="">
-                        {{ Auth::user()->name }}
-                      </a>
-                      <span>
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                              stroke="currentColor" class="h-6 w-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                          </svg>
-                      </span>
-                  </div>
-          
-                  <div
-                      class="invisible absolute rounded-xl z-50 flex w-full flex-col bg-white py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
-          
-                      <a href="{{route("profile.edit")}}" class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-indigo-700 md:mx-2">
-                        Профиль
-                      </a>
-          
-                      <a href="{{route("logout")}}" class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-indigo-700 md:mx-2">
-                        Выйти
-                      </a>
-          
-                  
-          
-                  </div>
-              </div>
-          
+        @auth("web")
+        <a :class="{ 'text-black': atTop, 'text-white': !atTop }" href="{{route("profile.edit")}}" class="text-black mr-4">Профиль</a> 
+          <a :class="{ 'text-black': atTop, 'text-white': !atTop }" href="{{route("logout")}}" class="text-black">Выйти</a> 
+        @endauth
+        
+        
+       
+     </button>
+     
+  </div>
+   <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow gap-8 hidden pb-4 md:pb-0 md:flex md:flex-row lg:ml-auto justify-end mb:justify-">
+    @guest("web")
+      <a :class="{ 'text-black': atTop, 'text-white': !atTop }" href="{{route("login")}}" class="text-black">Войти</a>
+    @endguest
+        
+    @auth("web")
+    <a :class="{ 'text-black': atTop, 'text-white': !atTop }" href="{{route("profile.edit")}}" class="text-black">Профиль</a> 
+      <a :class="{ 'text-black': atTop, 'text-white': !atTop }" href="{{route("logout")}}" class="text-black">Выйти</a> 
+    @endauth
+    
+    
+   </nav>
 
-            
-            
-            @endauth
+   
+  </div>
+ </div>
 
-            
-          </div>
-  </nav>
-
-
+</div>
   <script>
     function rippleEffect(event) {
           const btn = event.currentTarget;
@@ -76,6 +63,7 @@
           btn.appendChild(circle);
       }
   
-      const btn = document.getElementById("bt");
-      btn.addEventListener("click", rippleEffect);
+     
+
   </script>
+  <script>document.documentElement.classList.add('js')</script>

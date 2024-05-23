@@ -17,15 +17,21 @@ class AuthController extends Controller
     public function login(Request $request)
     {
 
+        // Валидация данных
+
         $data = $request->validate([
             "email" => ["required", "email", "string"],
             "password" => ["required"],
         ]);
 
+        // Валидация каптчи
+
         $request->validate([
             
             'captcha'=>['required','captcha'],
         ]);
+
+        // Перенаправление пользователя 
 
         if(auth("web")->attempt($data)) {
             return redirect(route("home"));
@@ -54,26 +60,32 @@ class AuthController extends Controller
     }
 
 
+    // Регистрация пользователя
+
     public function register(Request $request)
     {
 
+        $input = array("Медецинский центр", "Ресторан быстрого питания", "Сервиса хранения паролей", "Компании на произвольную тему");
+        $value = $input[array_rand($input)];
+        // Валидация данных 
         $data=$request->validate([
             "name" => ["required", "string"],
             "email" => ["required", "email", "string", "unique:users,email"],
             'captcha'=>['required','captcha'],
             "password" => ["required", "confirmed",Rules\Password::defaults()],
         ]);
-
+        // Создание массива и хэширование пароля
         $user = User::create([
             "name"=>$data["name"],
             "email"=>$data["email"],
+            "title"=>$value,
             "password"=>bcrypt($data["password"]),
         ]);
-
+        // Проверка пользователя
         if($user){
             auth("web")->login($user);
         }
-
+        // Перенапрвление пользователя
         return redirect(route("home"));
     }
 

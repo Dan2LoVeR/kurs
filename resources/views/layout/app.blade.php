@@ -19,8 +19,10 @@
     
 
 </head>
-<body class="w-screen animated-background h-screen bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-700">
+<body class="w-screen animated-background h-screen bg-gradient-to-r from-white via-black-200 to-white" x-data="{ atTop: true }">
     
+ 
+
 
     
     @yield('content')
@@ -30,9 +32,11 @@
     
 
     <script>
+        
         console.log($);
     </script>
-    
-    
+    <script src="/js/taoss.js"></script>
+    <script defer src="js/alpine.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

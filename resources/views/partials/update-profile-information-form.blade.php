@@ -1,10 +1,10 @@
 <section>
     <header>
-        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+        <h2 class="text-lg font-medium text-gray-900 ">
             {{ __('Информация Профиля') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+        <p class="mt-1 text-sm text-gray-700 ">
             {{ __("Обновите информацию профиля вашей учетной записи и адрес электронной почты.") }}
         </p>
     </header>
@@ -17,13 +17,13 @@
 
         <div>
             
-            <input id="name" name="name" type="text" class="w-full h-12 px-3 border-indigo-800 rounded-xl bg-white" value='{{ Auth::user()->name }}' required autofocus autocomplete="name" />
+            <input id="name" name="name" type="text" class="w-full h-12 px-3 border-stone-800 border rounded-xl bg-white" value='{{ Auth::user()->name }}' required autofocus autocomplete="name" />
             
         </div>
 
         <div>
             
-            <input id="email" name="email" type="email" class="w-full h-12 px-3 rounded-xl bg-white" value='{{ Auth::user()->email }}' required autocomplete="username" />
+            <input id="email" name="email" type="email" class="w-full h-12 px-3  border-stone-800 border rounded-xl bg-white" value='{{ Auth::user()->email }}' required autocomplete="username" />
             
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
@@ -46,7 +46,8 @@
         </div>
 
         <div class="flex items-center gap-4"> 
-            <button class="rounded-xl px-5  py-3 w-40 overflow-hidden border-2 shadow relative bg-indigo-700 text-white hover:bg-opacity-90 hover:bg-white hover:text-indigo-700 ">{{ __('Сохранить') }}</button>
+            
+            <button class="rounded-xl px-5  py-3 w-40 overflow-hidden border-2 shadow relative bg-stone-400 text-white hover:bg-opacity-90 hover:bg-white hover:text-stone-400 ">{{ __('Сохранить') }}</button>
 
             @if (session('status') === 'profile-updated')
                 <p

@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AdminUserFormRequest;
 use App\Models\AdminUser;
+use App\Models\User;
+use App\Models\Grades;
+use App\Models\Image;
+
 
 class AdminUserController extends Controller
 {
@@ -15,10 +19,17 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $users = AdminUser::orderBy("created_at", "DESC")->paginate(3);
+        
+        $grades = Grades::orderBy("created_at",'DESC')->get();
+        $users = User::orderBy("created_at", "DESC")->get();
+        $path = Image::orderBy("created_at", "DESC")->get();
+        
+
 
         return view("admin.admin_users.index", [
             "users" => $users,
+            "grades" => $grades,
+            "path" => $path,
         ]);
     }
 

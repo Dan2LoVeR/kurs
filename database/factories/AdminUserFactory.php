@@ -21,7 +21,7 @@ class AdminUserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'password'=> bcrypt(value:'12345')
+            'password'=> '12345'
             
         ];
     }

@@ -20,12 +20,18 @@ class IndexController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Post::orderBy("created_at", "DESC")->paginate(3);
+        
 
         return view('welcome', [
-            "posts" => $posts,
+
             'user' => $request->user()
         ]);
+    }
+
+    public function testShow(Request $request){
+
+        
+        return view('lessons.test.testone',['user' => $request->user(),]);
     }
 
     public function showContactForm()
@@ -38,5 +44,10 @@ class IndexController extends Controller
         Mail::to("info@cutcode.ru")->send(new ContactForm($request->validated()));
 
         return redirect(route("contacts"));
+    }
+
+    public function showTestOne()
+    {
+        return view("contact_form");
     }
 }

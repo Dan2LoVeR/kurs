@@ -13,13 +13,16 @@ class AuthController extends Controller
     }
 
     public function login(Request $request)
-    {
+    {   
+        // Валидация данных
+
         $data = $request->validate([
             "email" => ["required", "email", "string"],
             "password" => ["required"]
         ]);
 
-
+        // Перенаправление пользователя 
+        
         if(auth("admin")->attempt($data)) {
             return redirect(route("admin.posts.index"));
         }
