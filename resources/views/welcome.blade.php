@@ -123,7 +123,7 @@
                   </div>
                   <a href="{{route("finish")}}" title="Get quote now"
                       class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-black transition-all duration-200 border-black border-2 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                      role="button"> Сделать логотип
+                      role="button"> Сделать логоти
                   </a>
                   </div>
   
