@@ -141,14 +141,55 @@
                             
                         </td>
 
-                        <td class=" whitespace-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+
+                        
+
+                        <td class=" whitespace-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium ">
                             
+
+                            @foreach ($logotips as $logo)
+                            @if ($logo->user_id == $user->id)
+                            <style>
+                                .logotip{
+                                    padding: 5px;
+                        
+                                }
+                                .brand{
+                                    margin-left: auto;
+                                    text-align: center;
+                                    border-radius:  0 0 20px 20px; 
+                                    
+                                }
+                                .itog{
+                                    border-radius: 20px 20px 0 0 ; 
+                                    margin: auto;
+                                    
+                                    width: 170px;
+                                    height: 170px;
+                                }
+                            </style>
+                            <div class="itog" class="shadow-sm pb-10" style="background-color: {{$logo->back}};">
+                                
+                                <img id="logotip" src="img/example/one/{{$logo->image_path}}.png" alt="Old Image">
                             
+                                <h3 class="brand" class="position-relative rounded-t-lg" style="background-color: {{$logo->back}}; font-size: {{$logo->size}}rem;
+                                font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
+                            </div>
+                            
+                            @endif
+                            @break
+                            @endforeach
+                            <div class="w-10 h-20"></div>
                             @foreach ($path as $pa)
                             @if ($pa->user_id == $user->id)
-                            <img src="/storage/{{$pa->path}}" class="w-1/2 h-1/2">
+                            <img src="/storage/{{$pa->path}}" class="w-1/2 h-1/2 ml-auto">
+                            
                             @endif
                             @endforeach 
+
+                            
+
+                            
                             
                         
                             

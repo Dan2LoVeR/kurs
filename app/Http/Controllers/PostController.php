@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CommentForm;
 use App\Http\Requests\GradesForm;
 use App\Models\Image;
+use App\Models\Logotips;
 use App\Models\Grades;
 
 use function Laravel\Prompts\alert;
@@ -82,5 +83,28 @@ class PostController extends Controller
            "path" => $path,
            
        ]); 
+    }
+
+    public function back(Request $request){
+        // dd($request->all());
+        $back= $request->all(['radioc']);
+        $img = $request->all(['radioi']);
+        $title = $request->all(['title']);
+        $font = $request->all(['font']);
+        $size = $request->all(['size']);
+        $color = $request->all(['color']);
+        Logotips::create(
+            [
+            'user_id' => auth()->id(),
+            'back'=>implode($back),
+            'title'=> implode($title),
+            'image_path'=>implode($img),
+            'font'=>implode($font),
+            'size'=>implode($size),
+            'color'=>implode($color),
+            ]
+        );
+        
+        return redirect(route('profile.edit'));
     }
 }

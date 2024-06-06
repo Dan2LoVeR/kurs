@@ -328,9 +328,9 @@
 
                     <div class="flex flex-wrap  md:flex-nowrap mt-6 pt-12">
                     
-                     <div class="relative flex flex-col sm:w-64  items-start m-1 transition  ease-in-out duration-500  delay-150 transform  md:w-60 md:-ml-45 md:hover:-translate-x-32 md:hover:-translate-y-8 shrink-0 ">
+                     <div class="relative flex flex-col sm:w-300  items-start m-1 transition  ease-in-out duration-500  delay-150 transform  md:w-60 md:-ml-45 md:hover:-translate-x-32 md:hover:-translate-y-8 shrink-0 ">
                      
-                        <article class="mx-auto   rounded-3xl overflow-hidden  bg-red-600 ring-2 ring-inset ring-white/50 bg-center min-h-150 relative   transform duration-500   group">
+                        <article class="mx-auto  rounded-3xl overflow-hidden  bg-red-600 ring-2 ring-inset ring-white/50 bg-center min-h-150 relative   transform duration-500   group">
                        <div class=" relative h-full  group-hover:bg-opacity-0 min-h-300  flex flex-wrap flex-col   transform duration-500">
                         <div class=" group-hover:bg-black/30 duration-500 group-hover:backdrop-blur p-8 lg:p-10 h-full justify-end flex flex-col ">
                          <p class="opacity-0 text-white text-sm 2xl:text-lg group-hover:opacity-80 transform duration-500 "> Красный (Страстный, Мощный, Опасный, Важный): Красный – чрезвычайно стимулирующий цвет. </p>

@@ -47,6 +47,7 @@ Route::middleware("auth")->group(function(){
     Route::get('/8test', function(){return view('lessons.test.eight');})->name('8test');
     Route::get('/first_test', [IndexController::class, "testShow"])->name('finish');
     Route::post('/image', [PostController::class, 'image'])->name('image');
+    Route::post('/back', [PostController::class, 'back'])->name('back');
     Route::get('/finish', [PostController::class, 'finish'])->name('9test');
 });
 

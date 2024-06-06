@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\Grades;
 use App\Models\Image;
+use App\Models\Logotips;
 
 class ProfileController extends Controller
 {
@@ -21,10 +22,12 @@ class ProfileController extends Controller
 
         $grades = Grades::orderBy("created_at",'DESC')->get();
         $path = Image::orderBy("created_at", "DESC")->get();
+        $logotips = Logotips::orderBy("created_at", "DESC")->get();
         return view('profile.edit', [
             'user' => $request->user(),
             "grades" => $grades,
             "path" => $path,
+            "logotips" => $logotips,
         ]);
     }
 
