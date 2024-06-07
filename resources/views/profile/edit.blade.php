@@ -170,7 +170,7 @@
                             </style>
                             <div class="itog" class="shadow-sm pb-10" style="background-color: {{$logo->back}};">
                                 
-                                <img id="logotip" src="img/example/one/{{$logo->image_path}}.png" alt="Old Image">
+                                <img id="logotip" src="{{$logo->image_path}}" alt="Old Image">
                             
                                 <h3 class="brand" class="position-relative rounded-t-lg" style="background-color: {{$logo->back}}; font-size: {{$logo->size}}rem;
                                 font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>

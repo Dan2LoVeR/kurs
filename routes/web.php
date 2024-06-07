@@ -23,7 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
-
+Route::get('/test-jquery', function () {
+    return view('test-jquery');
+});
 
 
 Route::middleware("auth")->group(function(){
@@ -47,7 +49,9 @@ Route::middleware("auth")->group(function(){
     Route::get('/8test', function(){return view('lessons.test.eight');})->name('8test');
     Route::get('/first_test', [IndexController::class, "testShow"])->name('finish');
     Route::post('/image', [PostController::class, 'image'])->name('image');
+    Route::post('/imageLogo', [PostController::class, 'imageLogo'])->name('imageLogo');
     Route::post('/back', [PostController::class, 'back'])->name('back');
+    
     Route::get('/finish', [PostController::class, 'finish'])->name('9test');
 });
 

@@ -28,7 +28,7 @@
     @yield('content')
 
     
-
+    
     
 
     <script>
@@ -37,6 +37,7 @@
     </script>
     <script src="/js/taoss.js"></script>
     <script defer src="js/alpine.js"></script>
-    <script src="/js/app.js"></script>
+    
+    
 </body>
 </html>

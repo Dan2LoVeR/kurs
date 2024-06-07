@@ -63,7 +63,7 @@ class PostController extends Controller
     }
 
     public function image( Request $request){
-
+        // dd($request->all());
         $path = $request->file('image')->store('uploads', 'public');
         $name = $request->all(['name']);
         Image::create([
@@ -76,6 +76,8 @@ class PostController extends Controller
 
     }
 
+    
+
     public function finish(){
        $path = Image::orderBy("created_at", "DESC")->get();
 
@@ -87,18 +89,39 @@ class PostController extends Controller
 
     public function back(Request $request){
         // dd($request->all());
+        $log = $request->all(['imglogo']);
+        
+        if( $log["imglogo"] != null){
+            // dd($request->file('image'), $log);
+            
+            $path = $request->file('imglogo')->store('uploads', 'public');
+            $name = $request->all(['name']);
+            
+            Image::create([
+                'path'=>$path,
+                'user_id' => auth()->id(),
+                
+            ]);
+            
+            $img = '/storage/'.$path; 
+        }
+         
+        else $img = 'img/example/one/'.implode($request->all(['radioi'])) ;
+       
+           
+        
         $back= $request->all(['radioc']);
-        $img = $request->all(['radioi']);
         $title = $request->all(['title']);
         $font = $request->all(['font']);
         $size = $request->all(['size']);
         $color = $request->all(['color']);
         Logotips::create(
             [
+
             'user_id' => auth()->id(),
             'back'=>implode($back),
             'title'=> implode($title),
-            'image_path'=>implode($img),
+            'image_path'=>$img,
             'font'=>implode($font),
             'size'=>implode($size),
             'color'=>implode($color),

@@ -19,14 +19,15 @@
 <div >
     
 
-
+    
+      
 
 
     <div class="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5">
         <h2 class="mb-1 text-3xl font-extrabold leading-tight text-gray-900" id="block">Сделай логотип для </h2>
         <p class="mb-10">{{$user->title}} (сделай это здесь либо в приложении)</p>
         
-        <form class="w-full" action="{{route('back')}}" method="POST">
+        <form class="w-full" action="{{route('back')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <style>
                 .logotip{
@@ -48,6 +49,7 @@
                 }
             </style>
             
+
             <div class="flex flex-col w-full mb-5 sm:flex-row">
                 <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
                     <div class="relative h-full ml-0 mr-0 sm:mr-10">
@@ -167,69 +169,73 @@
                             </div>
                             <div class="grid grid-cols-3 gap-2 w-full max-w-screen-sm">
                                 <div>
-                                    <input class="hidden" id="radio_10" type="radio" name="radioi" value="shavuha" checked>
+                                    <input class="hidden" id="radio_10" type="radio" name="radioi" value="shavuha.png" checked>
                                     <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('shavuha')" for="radio_10">
                                         <span class="text-xs font-semibold uppercase">1</span>
                                         
                                     </label>
                                 </div>
                                 <div>
-                                    <input class="hidden" id="radio_11" type="radio" name="radioi" value="ball">
+                                    <input class="hidden" id="radio_11" type="radio" name="radioi" value="ball.png">
                                     <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('ball')" for="radio_11">
                                         <span class="text-xs font-semibold uppercase">2</span>
                                         
                                     </label>
                                 </div>
                                 <div>
-                                    <input class="hidden" id="radio_12" type="radio" name="radioi" value="safe">
+                                    <input class="hidden" id="radio_12" type="radio" name="radioi" value="safe.png">
                                     <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('safe')" for="radio_12">
                                         <span class="text-xs font-semibold uppercase">3</span>
                                         
                                     </label>
                                 </div>
                                 <div>
-                                    <input class="hidden" id="radio_13" type="radio" name="radioi" value="star">
+                                    <input class="hidden" id="radio_13" type="radio" name="radioi" value="star.png">
                                     <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('star')" for="radio_13">
                                         <span class="text-xs font-semibold uppercase">4</span>
                                         
                                     </label>
                                 </div>
                                 <div>
-                                    <input class="hidden" id="radio_14" type="radio" name="radioi" value="krug">
+                                    <input class="hidden" id="radio_14" type="radio" name="radioi" value="krug.png">
                                     <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('krug')" for="radio_14">
                                         <span class="text-xs font-semibold uppercase">5</span>
                                         
                                     </label>
                                 </div>
                                 <div>
-                                    <input class="hidden" id="radio_15" type="radio" name="radioi" value="mashine">
+                                    <input class="hidden" id="radio_15" type="radio" name="radioi" value="mashine.png">
                                     <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('mashine')" for="radio_15">
                                         <span class="text-xs font-semibold uppercase">6</span>
                                         
                                     </label>
                                 </div>
                                 <div>
-                                    <input class="hidden" id="radio_16" type="radio" name="radioi" value="medecine">
+                                    <input class="hidden" id="radio_16" type="radio" name="radioi" value="medecine.png">
                                     <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('medecine')" for="radio_16">
                                         <span class="text-xs font-semibold uppercase">7</span>
                                         
                                     </label>
                                 </div>
                                 <div>
-                                    <input class="hidden" id="radio_17" type="radio" name="radioi" value="medecine2">
+                                    <input class="hidden" id="radio_17" type="radio" name="radioi" value="medecine2.png">
                                     <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('medecine2')" for="radio_17">
                                         <span class="text-xs font-semibold uppercase">8</span>
                                         
                                     </label>
                                 </div>
                                 <div>
-                                    <input class="hidden" id="radio_18" type="radio" name="radioi" value="dog">
+                                    <input class="hidden" id="radio_18" type="radio" name="radioi" value="dog.png">
                                     <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('dog')" for="radio_18">
                                         <span class="text-xs font-semibold uppercase">9</span>
                                         
                                     </label>
                                 </div>
+                                
 
+
+
+                                
                                 
                             </div>
                             <script>
@@ -273,7 +279,7 @@
                                 <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Типографика</h3>
                             </div>
                             
-                            <form action="">
+                            
 
                                 <div class="flex flex-wrap">   
                                     <div class="bg-white p-4 rounded-lg">
@@ -330,7 +336,7 @@
                                 class="px-8 m-auto py-4 w-1/2  text-center bg-blue-500 text-white font-bold rounded-full transition-transform hover:-translate-y-1 hover:shadow-lg">
                                 Изменить
                             </div></div>
-                            </form>
+                            
 
                             <script>
                                 
@@ -366,27 +372,65 @@
                             <div class=" bg-white px-2">
                                 <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
                                     <div class="md:flex">
-                                        <div class="w-full p-3">
-                                            <div class="relative border-dotted h-48 rounded-lg border-dashed border-2 border-purple-500 bg-gray-100 flex justify-center items-center">
+                                        <div class="w-full p-2">
+                                            <div class="relative border-dotted h-20 rounded-lg border-dashed border-2 border-purple-500 bg-gray-100 flex justify-center items-center">
+
+                                @isset($path)
+                                                        
+                                                    @endisset
+                                                    
+                                                    
+                                                        @csrf<span class="block text-gray-600 font-normal">Прикрепите своё изображение</span>
+                                                        <input type="file" class="block w-full text-sm text-slate-500
+                                                            file:mr-4 file:py-2 file:px-4
+                                                            file:rounded-full file:border-0
+                                                            file:text-sm file:font-semibold
+                                                            file:bg-violet-50 file:text-violet-700
+                                                            hover:file:bg-violet-100" name="imglogo" id="logotipc" accept="image/*" onchange="loadFile(event)">
+                                                            
+                                                   
+                                                    
+                    
+                                                    
+                                                    
+                                                    <script>
+                                                    var loadFile = function(event) {
+                                                        var output = document.getElementById('logotip');
+                                                        output.src = URL.createObjectURL(event.target.files[0]);
+                                                        output.onload = function() {
+                                                        URL.revokeObjectURL(output.src) // free memory
+                                                        }
+                                                    };
+                                                    </script>  
+
+                                            </div></div></div></div></form>
+
+                                <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
+                                    <div class="md:flex">
+                                        <div class="w-full p-2">
+                                            <div class="relative border-dotted h-40 rounded-lg border-dashed border-2 border-purple-500 bg-gray-100 flex justify-center items-center">
                             
-                                              <div class="absolute">
-                                                
-                                                <div class="flex flex-col items-center">
-                                                  <i class="fa fa-folder-open fa-4x text-purple-500"></i>
-                                                
-                                                </div>
-                                              </div>
+                                              
+                                              
+
+
+
                                               <form action="{{route('image')}}"  method="post" enctype="multipart/form-data" id="base64">
                                                 {{csrf_field()}}
-                                                
-                                              <input type="file" id="contenteditable" class="h-full w-full opacity-0" name="image"><span class="block text-gray-400 font-normal">Прикрепите свой файл</span>
+                                                <span class="block text-gray-600 font-normal">Прикрепите свой готовый файл логотипа</span>
+                                              <input type="file" id="contenteditable" class="block w-full text-sm text-slate-500
+                                                file:mr-4 file:py-2 file:px-4
+                                                file:rounded-full file:border-0
+                                                file:text-sm file:font-semibold
+                                                file:bg-violet-50 file:text-violet-700
+                                                hover:file:bg-violet-100" name="image">
                                               
                                                 
                                                 
-                                              <button type="submit" class="tx-8 mt-14 m-auto py-4 w-1/2  text-center bg-purple-500 text-white font-bold rounded-full transition-transform hover:-translate-y-1 hover:shadow-lg">отправить</button>
+                                              <button type="submit" class="tx-8 mt-6 m-auto py-4 w-1/2  text-center bg-purple-500 text-white font-bold rounded-full transition-transform hover:-translate-y-1 hover:shadow-lg">отправить</button>
                                               
                                             </form>
-                                                
+                                             
                                             </div>
                                         </div>
                                     </div>
@@ -396,7 +440,7 @@
                     </div>
                 </div>
             </div>
-        </form>
+        
     </div>
             
 
@@ -562,6 +606,8 @@ let list= ["Медецинский центр", "Ресторан быстрог
         evt.currentTarget.classList.add("active:bg-gray-200");
     }
 </script>   
+
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 
 @include('partials.footer') 
 @endsection
