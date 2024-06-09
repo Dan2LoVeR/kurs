@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Jobs\ForgotUserEmailJob;
 use App\Mail\ForgotPassword;
 use App\Models\User;
+use App\Models\Groups;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
@@ -56,7 +57,10 @@ class AuthController extends Controller
 
     public function showRegisterForm()
     {
-        return view("auth.register");
+
+        $groups = Groups::orderBy("created_at",'DESC')->get();
+
+        return view("auth.register",["groups"=>$groups]);
     }
 
 
@@ -72,13 +76,16 @@ class AuthController extends Controller
             "name" => ["required", "string"],
             "email" => ["required", "email", "string", "unique:users,email"],
             'captcha'=>['required','captcha'],
+            'group_id'=>["required","exists:groups,id"],
             "password" => ["required", "confirmed",Rules\Password::defaults()],
         ]);
+        
         // Создание массива и хэширование пароля
         $user = User::create([
             "name"=>$data["name"],
             "email"=>$data["email"],
             "title"=>$value,
+            "group_id"=>$data["group_id"],
             "password"=>bcrypt($data["password"]),
         ]);
         // Проверка пользователя

@@ -9,6 +9,12 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use \Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use App\Models\Grades;
+use App\Models\Groups;
+use App\Models\Image;
+use App\Models\Logotips;
 
 class PostController extends Controller
 {
@@ -20,12 +26,61 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy("created_at", "DESC")->paginate(3);
+        $grades = Grades::orderBy("created_at",'DESC')->get();
+        $users = User::orderBy("created_at", "DESC")->get();
+        $path = Image::orderBy("created_at", "DESC")->get();
+        $logotips = Logotips::orderBy("created_at", "DESC")->get();
+        $groups = Groups::all();
+        $collection = collect($groups);
+        $names = $collection->pluck('name')->toArray();
+        
+        $result = [];
+        $ch =0;
+        
+        $test =[];
+        
+       $na = [];
+        foreach($groups as $group){
+            $na[] = $group->id; 
+        }
+       
+        
+        
+        foreach ( $groups as $group) {
+            $result = [];
+            $chel = 0;
+            foreach ($users as $user) {
+           
+                if ($user->group_id == $group->id) {
+                    $result[] = Grades::where('user_id', $user->id)->pluck('result')->toArray();
+                    $test[$ch] = $result;
+                    $chel++;
+                }
+                
+                
+            }
 
-        return view("admin.posts.index", [
-            "posts" => $posts,
+            
+            $gra[] = array_sum($result[$ch])/($chel*8); 
+            
+            $ch=$group->id;
+            
+        }
+        
+
+        
+
+        return view("admin.posts.index",[
+            "users" => $users,
+            "grades" => $grades,
+            "logotips" => $logotips,
+            "path" => $path,
+            "names" => json_encode($names),
+            "grade" => json_encode($gra),
+            "groups" => $groups
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -43,51 +98,13 @@ class PostController extends Controller
      * @param  PostFormRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostFormRequest $request)
-    {
-        Post::create($request->validated());
-
-        return redirect(route("admin.posts.index"));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Post $post)
-    {
-        return view("admin.posts.create", [
-            "post" => $post,
-        ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  PostFormRequest  $request
-     * @param  Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function update(PostFormRequest $request, Post $post)
+    public function store(Request $request)
     {
         
-        $post->update($request->validated());
+        $name = $request->input("name");
         
+        DB::insert('insert into `groups` (`id`, `created_at`, `updated_at`, `name`) values (null, null, null, ?)', [$name]);
         return redirect(route("admin.posts.index"));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Post $post)
-    {
-        $post->delete();
-
-        return redirect(route("admin.posts.index"));
-    }
 }

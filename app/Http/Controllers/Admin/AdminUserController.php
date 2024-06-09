@@ -7,8 +7,10 @@ use App\Http\Requests\Admin\AdminUserFormRequest;
 use App\Models\AdminUser;
 use App\Models\User;
 use App\Models\Grades;
+use App\Models\Groups;
 use App\Models\Image;
-
+use App\Models\Logotips;
+use Illuminate\Auth\Events\Logout;
 
 class AdminUserController extends Controller
 {
@@ -19,17 +21,22 @@ class AdminUserController extends Controller
      */
     public function index()
     {
+       
+        
         
         $grades = Grades::orderBy("created_at",'DESC')->get();
         $users = User::orderBy("created_at", "DESC")->get();
         $path = Image::orderBy("created_at", "DESC")->get();
-        
+        $logotips = Logotips::orderBy("created_at", "DESC")->get();
+        $groups = Groups::orderBy("created_at", "DESC")->get();
 
 
         return view("admin.admin_users.index", [
             "users" => $users,
             "grades" => $grades,
+            "logotips" => $logotips,
             "path" => $path,
+            "groups" => $groups
         ]);
     }
 

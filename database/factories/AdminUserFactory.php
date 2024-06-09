@@ -21,7 +21,7 @@ class AdminUserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'password'=> '12345'
+            'password'=> 'admin'
             
         ];
     }

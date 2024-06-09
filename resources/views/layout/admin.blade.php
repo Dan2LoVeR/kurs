@@ -29,17 +29,35 @@
                     <a href="{{ route('admin.admin_users.index') }}"
                        class="text-gray-100 flex items-center mt-4 py-2 px-6">
 
-                        <span class="mx-3">Пользователи</span>
+                        <span class="mx-3">Оценки</span>
                     </a>
 
                     <a href="{{ route('admin.posts.index') }}"
                        class="text-gray-100 flex items-center mt-4 py-2 px-6">
 
-                        <span class="mx-3">Статьи</span>
+                        <span class="mx-3">Статистика</span>
                     </a>
+
+                    <a href="{{ route('admin.posts.create') }}"
+                       class="text-gray-100 flex items-center mt-4 py-2 px-6">
+
+                        <span class="mx-3">Добавить группу</span>
+                    </a>
+
+                    <a href="{{ route('admin.admin_users.create') }}"
+                       class="text-gray-100 flex items-center mt-4 py-2 px-6">
+
+                        <span class="mx-3">Добавить администратора</span>
+                    </a>
+                    
+                    
+                    
+                    
+                    
+                    
                 </nav>
             </div>
-
+           
             <div class="flex-1 flex flex-col overflow-hidden">
                 <header class="flex justify-between items-center py-4 px-6 bg-white border-b-4 border-indigo-600">
                     <div class="flex items-center">

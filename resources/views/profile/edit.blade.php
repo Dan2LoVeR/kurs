@@ -10,6 +10,8 @@
         
        
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 space-y-6">
+            
+            
             <div class="p-4 sm:p-8 bg-white/5 shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     @include('partials.update-profile-information-form')
@@ -65,6 +67,7 @@
 
                         <td class="px-6 py-4 whitespace-no-wrap border-2 border-gray-200">
 
+                            
                             @foreach ($grades as $grade)
                                 @if ($grade->user_id == $user->id and $grade->name == "2")
                                     <span class="text-sm leading-5 text-gray-900"> {{ $grade->result }}</span>
@@ -146,7 +149,6 @@
 
                         <td class=" whitespace-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium ">
                             
-
                             @foreach ($logotips as $logo)
                             @if ($logo->user_id == $user->id)
                             <style>
@@ -179,13 +181,8 @@
                             @endif
                             @break
                             @endforeach
-                            <div class="w-10 h-20"></div>
-                            @foreach ($path as $pa)
-                            @if ($pa->user_id == $user->id)
-                            <img src="/storage/{{$pa->path}}" class="w-1/2 h-1/2 ml-auto">
+                        <div class="w-10 h-10"></div>
                             
-                            @endif
-                            @endforeach 
 
                             
 

@@ -4,50 +4,79 @@
 
 @section('content')
     <div class="container mx-auto px-6 py-8">
-        <h3 class="text-gray-700 text-3xl font-medium">Статьи</h3>
+        <h3 class="text-gray-700 text-3xl font-medium">Статистика</h3>
 
-        <div class="mt-8">
-            <a href="{{ route("admin.posts.create") }}" class="text-indigo-600 hover:text-indigo-900">Добавить</a>
-        </div>
+        
 
         <div class="flex flex-col mt-8">
             <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                 <div
-                        class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
-                    <table class="min-w-full">
-                        <thead>
-                        <tr>
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Заголовок</th>
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-                        </tr>
-                        </thead>
+               {{-- @foreach ($groups as $item)
+                  <h1>{{$item->name}}</h1> 
+               @endforeach --}}
+                
 
-                        <tbody class="bg-white">
-                        @foreach($posts as $post)
-                            <tr>
-                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    <div class="text-sm leading-5 text-gray-900">{{ $post->title }}</div>
-                                </td>
+                
 
-                                <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                    <a href="{{ route("admin.posts.edit", $post->id) }}" class="text-indigo-600 hover:text-indigo-900">Редактировать</a>
+                <div class="container mx-auto px-4 py-6 mt-20">
+                    <canvas id="myChart"></canvas>
+                </div>
+                
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                
+                <div class="container mx-auto px-4 py-6">
+                    <canvas id="myChart"></canvas>
+                </div>
 
-                                    <form action="{{ route("admin.posts.destroy", $post->id) }}" method="POST">
-                                        @csrf
+                {{$names}}
+                
+                <script>
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: <?=$names?>,
+                            datasets: [{
+                                tooltip: false,
+                                data: <?=$grade?>,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            plugins: {
+      legend: false,
+    },
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            
+                            }
+                        }
+                    });
+                </script>
 
-                                        @method('DELETE')
 
-                                        <button type="submit" class="text-red-600 hover:text-red-900">Удалить</button>
-                                    </form>
 
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                
 
-                    {{ $posts->links() }}
+                       
                 </div>
             </div>
         </div>

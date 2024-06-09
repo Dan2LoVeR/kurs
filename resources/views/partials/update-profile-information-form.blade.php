@@ -9,7 +9,18 @@
         </p>
     </header>
 
+
+    @foreach ($group as $gro)
+    @if (Auth::user()->group_id == $gro->id)
+        
+        {{$gro->name}}
+    @endif
+        
+    @endforeach
     
+    {{-- {{$group[Auth::user()->group_id - 1]->name}}
+    {{Auth::user()->group_id}}
+     --}}
 
     <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
         @csrf

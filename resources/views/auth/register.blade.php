@@ -55,9 +55,52 @@
                                 {!! captcha_img('math') !!}
                             </span>
 
+
+                            
+
                             <button type="button" class="font-medium text-blue-900 hover:bg-blue-300 rounded-md p-2 reload" id="reload">
                                 &#x21bb;
                             </button>
+
+                            <div class="dropdown inline-block relative">
+                                <div class="bg-gray-300  text-gray-700  font-semibold py-2 px-4 rounded inline-flex items-center">
+                                  <span class="mr-1">Группа</span>
+                                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                                </div>
+                                <ul class="dropdown-menu absolute  hidden text-gray-700 absolut pt-1">
+                                    @foreach ($groups as $group)
+                                    <li class="bg-gray-200  hover:bg-gray-400   px-4 block whitespace-no-wrap"><input type="radio" class="" name="group_id" value="{{$group->id}}" id="{{$group->id}}"> <label for="{{$group->id}}" class="custom-radio"></label> {{$group->name}}</li>       
+                                    @endforeach
+
+
+                                
+                                </ul>
+                              </div>
+                              
+                              <style>
+                                .dropdown:hover .dropdown-menu {
+                                    display: block;
+                                }
+                                .custom-radio {
+                                    display: inline-block;
+                                    width: 60%;
+                                    height: 20px;
+                                    position: absolute;
+                                    padding-right: 4px;
+                                    
+                                }
+                                input[type="radio"] {
+                                    display: none;
+                                }
+                                input[type="radio"]:checked + .custom-radio {
+                                    
+                                    border-bottom: 3px solid rgb(55 65 81 );
+                                }
+                                </style>
+		
+                                
+                                
+                              
                         </div>
 
                     </div>

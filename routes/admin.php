@@ -4,7 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\PostController;
 use \App\Http\Controllers\Admin\AuthController;
-
+use \App\Http\Controllers\Admin\AdminUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +17,7 @@ use \App\Http\Controllers\Admin\AuthController;
 |
 */
 Route::get('/', function () {
-    return redirect('/admin/posts');
+    return redirect('/admin/admin_users');
 });
 
 Route::middleware("guest:admin")->group(function() {
@@ -28,8 +28,10 @@ Route::middleware("guest:admin")->group(function() {
 Route::middleware("auth:admin")->group(function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-    Route::resource('admin_users', \App\Http\Controllers\Admin\AdminUserController::class);
-    Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
+    
+    Route::resource('/admin_users', AdminUserController::class );
+    Route::resource('/posts', PostController::class);
+    
 });
 
 
