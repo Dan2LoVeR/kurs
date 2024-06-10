@@ -43,9 +43,12 @@ class PostController extends Controller
         foreach($groups as $group){
             $na[] = $group->id; 
         }
-       
-        
-        
+        $ra =[];
+        foreach ($users as $user) {
+            $ra[] = $user->group_id;
+        }       
+        // dd( $na, $ra);
+
         foreach ( $groups as $group) {
             $result = [];
             $chel = 0;
@@ -60,14 +63,32 @@ class PostController extends Controller
                 
             }
 
+            $gra[]=$ch;
+            $gre = array_sum($test);
+            $ch++;
+            // $gra[] = array_sum($result[$ch])/($chel*8); 
             
-            $gra[] = array_sum($result[$ch])/($chel*8); 
             
-            $ch=$group->id;
             
         }
         
+        $gri = [];
+        $grw = [];
+       $ch = 0;
+       
+        foreach($test as $key ){
+            $chel = 0;
+            $gri= [];
+            foreach($key as $k){
+                $gri[] =array_sum($k);
+                $chel++;
+            }
+            $ch++;
+            $grw[] = array_sum($gri)/($chel*8);
+            
+        }
 
+        
         
 
         return view("admin.posts.index",[
@@ -76,7 +97,7 @@ class PostController extends Controller
             "logotips" => $logotips,
             "path" => $path,
             "names" => json_encode($names),
-            "grade" => json_encode($gra),
+            "grade" => json_encode($grw),
             "groups" => $groups
         ]);
     }
