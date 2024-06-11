@@ -9,8 +9,12 @@
 	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 </style>
-
-<div class="w-full h-96 flex justify-center items-center">
+<section class="px-4 pt-40 pb-32 relative ">
+    <div class="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat opacity-80 bg-fixed" style="background-image:url(storage/image/back.jpg)"></div>
+     
+    </div>
+  </section>
+<div class="w-full flex justify-center items-center">
     
     
     </div>
@@ -20,15 +24,9 @@
     
 
     
-      <style>
-        .fontest{
-            color: blue;
-            
-            font-family: 'resources/font/Alegreya-Medium.woff2';
-        }
-      </style>
+      
 
-<h1 class="fontest">Test Тест</h1>
+
     <div class="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5">
         
         <h2 class="mb-1 text-3xl font-extrabold leading-tight text-gray-900"  id="block">Сделай логотип для </h2>

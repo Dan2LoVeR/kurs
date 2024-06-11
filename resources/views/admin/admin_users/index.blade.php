@@ -237,9 +237,9 @@
                                 <h3 class="brand" class="position-relative rounded-t-lg" style="background: {{$logo->back}}; font-size: {{$logo->size}}rem;
                                 font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
                             </div>
-                            
-                            @endif
                             @break
+                            @endif
+                            
                             @endforeach
                                     <div class="w-10 h-10"></div>
                                         
@@ -436,10 +436,11 @@
                                             <h3 class="brand" class="position-relative rounded-t-lg" style="background: {{$logo->back}}; font-size: {{$logo->size}}rem;
                                             font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
                                         </div>
-                                        
-                                        @endif
                                         @break
+                                        @endif
+                                       
                                         @endforeach
+                                        
                                     <div class="w-10 h-10"></div>
                                         
                                         
