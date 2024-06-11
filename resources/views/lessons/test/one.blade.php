@@ -23,12 +23,12 @@
 
     <div class="relative rounded-xl shadow-xl">
 
-        <form action="{{ route("1test_process") }}" method="post">
+        <form action="{{ route("1test_process") }}" method="post" class="bg-white">
         @csrf
           <input type="hidden" name="name" value="1">
           
         {{-- Вопрос 1 --}}
-        <div class="sticky mb-5 top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl">
+        <div class="sticky  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl">
             <div class="items-center justify-center h-1/2 pb-4" >
                 <!-- 1 -->
                 <h3 class="text-2xl mx-auto text-center font-bold my-8 ">Для чего служит фирменный стиль?</h3>
@@ -99,7 +99,7 @@
         </div>
 
         {{-- Вопрос 2 --}}
-        <div class="sticky mb-5  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl bg-white">
+        <div class="sticky  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl bg-white">
             <div class="items-center justify-center h-1/2 pb-4" >
                 <!-- 1 -->
                 <h3 class="text-2xl mx-auto text-center font-bold my-8 ">Основные элементы фирменного стиля</h3>
@@ -164,7 +164,7 @@
             
         </div>
         {{-- Вопрос 3 --}}
-        <div class="sticky mb-2  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl bg-white">
+        <div class="sticky  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl bg-white">
             <div class="items-center justify-center h-1/2 pb-4" >
                 <!-- 3 -->
                 <h3 class="text-2xl mx-auto text-center font-bold my-8 ">Какая палитра считается правельной с точки зрения цветовой теории?</h3>
@@ -222,7 +222,7 @@
             
         </div>
         {{-- Вопрос 4 --}}
-        <div class="sticky mb-2  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl bg-white">
+        <div class="sticky  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl bg-white">
             <div class="items-center justify-center h-1/2 pb-4" >
                 <!-- 3 -->
                 <h3 class="text-2xl mx-auto text-center font-bold my-8 ">Фирменный стиль и Айдентика — это разные понятия?</h3>
@@ -269,7 +269,7 @@
             
         </div>
         {{-- Вопрос 5 --}}
-        <div class="sticky mb-1  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl bg-white">
+        <div class="sticky  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl bg-white">
             <div class="items-center justify-center h-1/2 pb-4" >
                 <!-- 1 -->
                 <h3 class="text-2xl mx-auto text-center font-bold my-8 ">С чего стоит начать разработку фирменного стиля</h3>
@@ -334,7 +334,7 @@
             
         </div>
         {{-- Вопрос 6 --}}
-        <div class="sticky mb-1  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl bg-white">
+        <div class="sticky  top-0 h-1/2 flex flex-col items-center justify-center border-slate-500 border-2 rounded-xl bg-white">
           <div class="items-center justify-center h-1/2 pb-4" >
               <!-- 1 -->
               <h3 class="text-2xl mx-auto text-center font-bold my-8 ">Какие носители фирменного стиля более актуальны в нынешнее время?</h3>
@@ -401,7 +401,7 @@
       </div>
       <div class="flex justify-center items-center my-10">
 
-        <div class="relative inline-flex  group">
+        <div class="relative inline-flex  group bg-white">
             <div
                 class="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
             </div>

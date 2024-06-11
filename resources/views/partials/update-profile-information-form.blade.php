@@ -10,13 +10,7 @@
     </header>
 
 
-    @foreach ($group as $gro)
-    @if (Auth::user()->group_id == $gro->id)
-        
-        {{$gro->name}}
-    @endif
-        
-    @endforeach
+    
     
     {{-- {{$group[Auth::user()->group_id - 1]->name}}
     {{Auth::user()->group_id}}
@@ -54,11 +48,47 @@
                     @endif
                 </div>
             @endif
+
+            <div class="dropdown inline-block relative mt-5">
+                <div class="bg-gray-300  text-gray-700  font-semibold py-2 px-4 rounded inline-flex items-center">
+                  <span class="mr-1">{{ Auth::user()->group->name }}</span>
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                </div>
+                <ul class="dropdown-menu absolute  hidden text-gray-700 absolut pt-1">
+                    @foreach ($group as $grou)
+                    <li class="bg-gray-200  hover:bg-gray-400   px-4 block whitespace-no-wrap"><input type="radio" class="" name="group_id" value="{{$grou->id}}" id="{{$grou->id}}"> <label for="{{$grou->id}}" class="custom-radio"></label> {{$grou->name}}</li>       
+                    @endforeach
+
+
+                
+                </ul>
+              </div>
         </div>
+
+        <style>
+                                .dropdown:hover .dropdown-menu {
+                                    display: block;
+                                }
+                                .custom-radio {
+                                    display: inline-block;
+                                    width: 60%;
+                                    height: 20px;
+                                    position: absolute;
+                                    padding-right: 4px;
+                                    
+                                }
+                                input[type="radio"] {
+                                    display: none;
+                                }
+                                input[type="radio"]:checked + .custom-radio {
+                                    
+                                    border-bottom: 3px solid rgb(55 65 81 );
+                                }
+                                </style>
 
         <div class="flex items-center gap-4"> 
             
-            <button class="rounded-xl px-5  py-3 w-40 overflow-hidden border-2 shadow relative bg-stone-400 text-white hover:bg-opacity-90 hover:bg-white hover:text-stone-400 ">{{ __('Сохранить') }}</button>
+            <button class="rounded-xl px-5 static py-3 w-40 overflow-hidden border-2 shadow  bg-stone-400 text-white hover:bg-opacity-90 hover:bg-white hover:text-stone-400 ">{{ __('Сохранить') }}</button>
 
             @if (session('status') === 'profile-updated')
                 <p

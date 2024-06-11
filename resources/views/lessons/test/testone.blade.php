@@ -20,11 +20,18 @@
     
 
     
-      
+      <style>
+        .fontest{
+            color: blue;
+            
+            font-family: 'resources/font/Alegreya-Medium.woff2';
+        }
+      </style>
 
-
+<h1 class="fontest">Test Тест</h1>
     <div class="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5">
-        <h2 class="mb-1 text-3xl font-extrabold leading-tight text-gray-900" id="block">Сделай логотип для </h2>
+        
+        <h2 class="mb-1 text-3xl font-extrabold leading-tight text-gray-900"  id="block">Сделай логотип для </h2>
         <p class="mb-10">{{$user->title}} (сделай это здесь либо в приложении)</p>
         
         <form class="w-full" action="{{route('back')}}" method="POST" enctype="multipart/form-data">
@@ -85,74 +92,113 @@
                             <div class="grid grid-cols-3 gap-2 w-full max-w-screen-sm">
                                 <div>
                                     <input class="hidden" id="radio_1" type="radio" name="radioc" checked>
-                                    <label class="flex flex-col p-4 border-2 border-gray-200 rounded-lg cursor-pointer " onclick="changeColor('white')" for="radio_1">
-                                        <span class="text-xs font-semibold uppercase">пустой</span>
+                                    <label class="flex flex-col p-4 border-2 bg-gray-200 rounded-lg cursor-pointer " onclick="changeColor('white')" for="radio_1">
+                                        <span class="text-xs font-semibold uppercase"></span>
                                         
                                     </label>
                                 </div>
                                 <div>
                                     <input class="hidden" id="radio_2" type="radio" name="radioc" value="#a6a6a6" onclick="changeColor('#a6a6a6')">
-                                    <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" for="radio_2">
-                                        <span class="text-xs font-semibold uppercase">серый</span>
+                                    <label class="flex flex-col p-4 border-2 bg-gray-400 rounded-lg cursor-pointer" for="radio_2">
+                                        <span class="text-xs font-semibold uppercase"></span>
                                         
                                     </label>
                                 </div>
                                 <div>
                                     <input class="hidden" id="radio_3" type="radio" name="radioc" value="black" onclick="changeColor('black')">
-                                    <label class="flex flex-col p-4 border-2 border-black rounded-lg cursor-pointer" for="radio_3">
-                                        <span class="text-xs font-semibold uppercase">чёрный</span>
+                                    <label class="flex flex-col p-4 border-2 bg-black rounded-lg cursor-pointer" for="radio_3">
+                                        <span class="text-xs font-semibold uppercase"></span>
                                         
                                     </label>
                                 </div>
 
                                 <div>
                                     <input class="hidden" id="radio_4" type="radio" name="radioc" value="#bef264" onclick="changeColor('#bef264')">
-                                    <label class="flex flex-col p-4 border-2 border-lime-300 rounded-lg cursor-pointer" for="radio_4">
-                                        <span class="text-xs font-semibold uppercase">лайм</span>
+                                    <label class="flex flex-col p-4 border-2 bg-lime-300 rounded-lg cursor-pointer" for="radio_4">
+                                        <span class="text-xs font-semibold uppercase"></span>
                                         
                                     </label>
                                 </div>
 
                                 <div>
                                     <input class="hidden" id="radio_5" type="radio" name="radioc" value="#fca5a5" onclick="changeColor('#fca5a5')">
-                                    <label class="flex flex-col p-4 border-2 border-red-300 rounded-lg cursor-pointer" for="radio_5">
-                                        <span class="text-xs font-semibold uppercase">розовый</span>
+                                    <label class="flex flex-col p-4 border-2 bg-red-300 rounded-lg cursor-pointer" for="radio_5">
+                                        <span class="text-xs font-semibold uppercase"></span>
                                         
                                     </label>
                                 </div>
 
                                 <div>
                                     <input class="hidden" id="radio_6" type="radio" name="radioc" value="#fde047" onclick="changeColor('#fde047')">
-                                    <label class="flex flex-col p-4 border-2 border-yellow-300 rounded-lg cursor-pointer" for="radio_6">
-                                        <span class="text-xs font-semibold uppercase">жёлтый</span>
+                                    <label class="flex flex-col p-4 border-2 bg-yellow-300 rounded-lg cursor-pointer" for="radio_6">
+                                        <span class="text-xs font-semibold uppercase"></span>
                                         
                                     </label>
                                 </div>
 
                                 <div>
                                     <input class="hidden" id="radio_7" type="radio" name="radioc" value="#22d3ee" onclick="changeColor('#22d3ee')">
-                                    <label class="flex flex-col p-4 border-2 border-cyan-400 rounded-lg cursor-pointer" for="radio_7">
-                                        <span class="text-xs font-semibold uppercase">голубой</span>
+                                    <label class="flex flex-col p-4 border-2 bg-cyan-400 rounded-lg cursor-pointer" for="radio_7">
+                                        <span class="text-xs font-semibold uppercase"></span>
                                         
                                     </label>
                                 </div>
 
                                 <div>
                                     <input class="hidden" id="radio_8" type="radio" name="radioc" value="#c084fc" onclick="changeColor('#c084fc')">
-                                    <label class="flex flex-col p-4 border-2 border-purple-400 rounded-lg cursor-pointer" for="radio_8">
-                                        <span class="text-xs font-semibold uppercase">пурпур</span>
+                                    <label class="flex flex-col p-4 border-2 bg-purple-400 rounded-lg cursor-pointer" for="radio_8">
+                                        <span class="text-xs font-semibold uppercase"></span>
                                         
                                     </label>
                                 </div>
 
                                 <div>
                                     <input class="hidden" id="radio_9" type="radio" name="radioc" value="#1d4ed8" onclick="changeColor('#1d4ed8')">
-                                    <label class="flex flex-col p-4 border-2 border-blue-700 rounded-lg cursor-pointer" for="radio_9">
-                                        <span class="text-xs font-semibold uppercase">синий</span>
+                                    <label class="flex flex-col p-4 border-2 bg-blue-700 rounded-lg cursor-pointer" for="radio_9">
+                                        <span class="text-xs font-semibold uppercase"></span>
                                         
                                     </label>
                                 </div>
 
+                                <div>
+                                    <input class="hidden" id="radio_22" type="radio" name="radioc" value="linear-gradient(to right, #c084fc, #fde047)" onclick="changeColor('linear-gradient(to right, #c084fc, #fde047)')">
+                                    <label class="flex flex-col p-4 border-2  rounded-lg cursor-pointer" style="background: linear-gradient(to right, #c084fc, #fde047);" for="radio_22">
+                                        <span class="text-xs font-semibold uppercase"></span>
+                                        
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input class="hidden" id="radio_23" type="radio" name="radioc" value="repeating-linear-gradient(#614E70,#614E70 15px,#6BE9BC 15px,#6BE9BC 30px)" onclick="changeColor('repeating-linear-gradient(#614E70,#614E70 15px,#6BE9BC 15px,#6BE9BC 30px)')">
+                                    <label class="flex flex-col p-4 border-2  rounded-lg cursor-pointer" style="background: repeating-linear-gradient(#614E70,#614E70 15px,#6BE9BC 15px,#6BE9BC 30px);" for="radio_23">
+                                        <span class="text-xs font-semibold uppercase"></span>
+                                        
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input class="hidden" id="radio_24" type="radio" name="radioc" value="#c7b39b url(/img/example/one/pattern3.jpg)" onclick="changeColor('#c7b39b url(img/example/one/pattern3.jpg)')">
+                                    <label class="flex flex-col p-4 border-2  rounded-lg cursor-pointer" style="background: #c7b39b url(/img/example/one/pattern3.jpg);" for="radio_24">
+                                        <span class="text-xs font-semibold uppercase"></span>
+                                        
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input class="hidden" id="radio_25" type="radio" name="radioc" value="#c7b39b url(/img/example/one/pattern2.jpg)" onclick="changeColor('#c7b39b url(/img/example/one/pattern2.jpg)')">
+                                    <label class="flex flex-col p-4 border-2  rounded-lg cursor-pointer" style="background: #c7b39b url(img/example/one/pattern2.jpg);" for="radio_25">
+                                        <span class="text-xs font-semibold uppercase"></span>
+                                        
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input class="hidden" id="radio_26" type="radio" name="radioc" value="#c7b39b url(/img/example/one/pattern4.png)" onclick="changeColor('#c7b39b url(img/example/one/pattern4.png)')">
+                                    <label class="flex flex-col p-4 border-2  rounded-lg cursor-pointer" style="background: #c7b39b url(img/example/one/pattern4.png);" for="radio_26">
+                                        <span class="text-xs font-semibold uppercase"></span>
+                                        
+                                    </label>
+                                </div>
                                 
                                 
                             </div>
@@ -231,6 +277,27 @@
                                         
                                     </label>
                                 </div>
+                                <div>
+                                    <input class="hidden" id="radio_19" type="radio" name="radioi" value="monk.png">
+                                    <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('monk')" for="radio_19">
+                                        <span class="text-xs font-semibold uppercase">10</span>
+                                        
+                                    </label>
+                                </div>
+                                <div>
+                                    <input class="hidden" id="radio_20" type="radio" name="radioi" value="rocket.png">
+                                    <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('rocket')" for="radio_20">
+                                        <span class="text-xs font-semibold uppercase">11</span>
+                                        
+                                    </label>
+                                </div>
+                                <div>
+                                    <input class="hidden" id="radio_21" type="radio" name="radioi" value="sun.png">
+                                    <label class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer" onclick="changeImage('sun')" for="radio_21">
+                                        <span class="text-xs font-semibold uppercase">12</span>
+                                        
+                                    </label>
+                                </div>
                                 
 
 
@@ -241,14 +308,14 @@
                             <script>
                                 function changeImage(im) {
                                     
-                                    link = 'img/example/one/'+im+'.png';
+                                    link = '/img/example/one/'+im+'.png';
                                     
                                     const myImg = document.getElementById('logotip');
                                     myImg.src = link;
                                     }
                                 function changeColor(i){
-                                    $('.itog').css('background-color', i);
-                                    $('.brand').css('background-color', i);
+                                    $('.itog').css('background', i);
+                                    $('.brand').css('background', i);
                                 }
 
                                 
@@ -298,8 +365,11 @@
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                                       </div>
                                       <ul class="dropdown-menu absolute  hidden text-gray-700 absolut pt-1">
-                                        <li class="rounded-t bg-gray-200  hover:bg-gray-400  py-2 px-4 block whitespace-no-wrap"><input type="radio"   name="font" value="Impact" onclick="changeFont('Impact')" >Impact, fantasy</input></li>
+                                        <li class="rounded-t bg-gray-200  hover:bg-gray-400  py-2 px-4 block whitespace-no-wrap"><input type="radio"   name="font" value="Impact" onclick="changeFont('Impact, fantasy')" >Impact, fantasy</input></li>
                                         <li class="bg-gray-200  hover:bg-gray-400  py-2 px-4 block whitespace-no-wrap"><input type="radio"  name="font" value="URW Chancery L cursive" onclick="changeFont('URW Chancery L, cursive')" >URW Chancery L, cursive</input></li>
+                                        <li class="bg-gray-200  hover:bg-gray-400  py-2 px-4 block whitespace-no-wrap"><input type="radio"  name="font" value="Georgia " onclick="changeFont('Georgia')" >Georgia</input></li>
+                                        <li class="bg-gray-200  hover:bg-gray-400  py-2 px-4 block whitespace-no-wrap"><input type="radio"  name="font" value="Arial Black " onclick="changeFont('Arial Black')" >Arial Black</input></li>
+                                        <li class="bg-gray-200  hover:bg-gray-400  py-2 px-4 block whitespace-no-wrap"><input type="radio"  name="font" value="Trebuchet MS " onclick="changeFont('Trebuchet MS')" >Trebuchet MS</input></li>
                                         <li class="rounded-b bg-gray-200  hover:bg-gray-400  py-2 px-4 block whitespace-no-wrap"><input type="radio"  class="" name="font" value="Courier monospace"  onclick="changeFont('Courier, monospace')">Courier, monospace</input></li>
                                       </ul>
                                     </div>

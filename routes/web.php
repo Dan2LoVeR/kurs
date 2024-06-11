@@ -76,6 +76,8 @@ Route::post('/contact_form_process', [IndexController::class, 'contactForm'])->n
 
 Route::get('/lessons', function(){return view('lessons.index'); })->name('lessons');
 
+
+
 Route::get('/first', function(){return view('lessons.partials.first'); })->name('first');
 
 Route::get('/second', function(){return view('lessons.partials.second'); })->name('second');

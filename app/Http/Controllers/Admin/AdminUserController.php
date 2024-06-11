@@ -29,7 +29,7 @@ class AdminUserController extends Controller
         $path = Image::orderBy("created_at", "DESC")->get();
         $logotips = Logotips::orderBy("created_at", "DESC")->get();
         $groups = Groups::orderBy("created_at", "DESC")->get();
-
+        
 
         return view("admin.admin_users.index", [
             "users" => $users,

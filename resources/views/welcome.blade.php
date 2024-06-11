@@ -31,7 +31,7 @@
     {{-- В РАМКАХ ЭТОГО КУРСА ВЫ УЗНАЕТЕ --}}
     <div class="max-w-screen mb-30 px-4 mx-auto mt-8 sm:mt-12 sm:px-6 md:max-w-6xl  delay-[300ms] duration-[600ms] taos:translate-y-[50px] taos:opacity-0  [animation-iteration-count:infinite]" data-taos-offset="30">
 
-        
+      
   
         <div class="lg:grid lg:grid-cols-12 lg:gap-8    "   >
           <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">

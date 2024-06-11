@@ -210,37 +210,37 @@
                                     </style>
                                         
                                         @foreach ($logotips as $logo)
-                                        @if ($logo->user_id == $user->id)
-                                        <style>
-                                            .logotip{
-                                                padding: 5px;
+                            @if ($logo->user_id == $user->id)
+                            <style>
+                                .logotip{
+                                    padding: 5px;
+                        
+                                }
+                                .brand{
+                                    margin-left: auto;
+                                    text-align: center;
+                                    border-radius:  0 0 20px 20px; 
                                     
-                                            }
-                                            .brand{
-                                                margin-left: auto;
-                                                text-align: center;
-                                                border-radius:  0 0 20px 20px; 
-                                                
-                                            }
-                                            .itog{
-                                                border-radius: 20px 20px 0 0 ; 
-                                                margin: auto;
-                                                
-                                                width: 170px;
-                                                height: 170px;
-                                            }
-                                        </style>
-                                        <div class="itog" class="shadow-sm pb-10" style="background-color: {{$logo->back}};">
-                                            
-                                            <img id="logotip" src="{{$logo->image_path}}" alt="Old Image">
-                                        
-                                            <h3 class="brand" class="position-relative rounded-t-lg" style="background-color: {{$logo->back}}; font-size: {{$logo->size}}rem;
-                                            font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
-                                        </div>
-                                        
-                                        @endif
-                                        @break
-                                        @endforeach
+                                }
+                                .itog{
+                                    border-radius: 20px 20px 0 0 ; 
+                                    margin: auto;
+                                    
+                                    width: 170px;
+                                    height: 170px;
+                                }
+                            </style>
+                            <div class="itog" class="shadow-sm pb-10" style="background: {{$logo->back}};">
+                                
+                                <img id="logotip" src="{{$logo->image_path}}" alt="Old Image">
+                            
+                                <h3 class="brand" class="position-relative rounded-t-lg" style="background: {{$logo->back}}; font-size: {{$logo->size}}rem;
+                                font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
+                            </div>
+                            
+                            @endif
+                            @break
+                            @endforeach
                                     <div class="w-10 h-10"></div>
                                         
                                         
@@ -408,39 +408,6 @@
 
                                     <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
                                         
-                                    <style>
-                                        .blog{
-                                        max-width:300px;
-                                        margin:0 auto;
-                                        display:block;
-                                        text-align:center;
-                                        position:relative;
-                                        
-                                        }
-                                        .blog img{
-                                        max-width:250px;
-                                        }
-                                        .blog .text{
-                                        opacity:0;
-                                        position:absolute;
-                                        bottom:0;
-                                        border-radius: 40px;
-                                        left:50%;
-                                        transform:translate(-50%, 0);
-                                        transition: 0.5s;
-                                        width:100%;
-                                        height: 100%;
-                                        font-size:22px;
-                                        background-color:rgba(0, 0, 0, 0.5);
-                                        
-                                        padding:10px 5px;
-                                        color:#fff;
-                                        }
-                                        .blog:hover .text{
-                                        opacity:1;
-                                        }
-                                    </style>
-                                        
                                         @foreach ($logotips as $logo)
                                         @if ($logo->user_id == $user->id)
                                         <style>
@@ -462,11 +429,11 @@
                                                 height: 170px;
                                             }
                                         </style>
-                                        <div class="itog" class="shadow-sm pb-10" style="background-color: {{$logo->back}};">
+                                        <div class="itog" class="shadow-sm pb-10" style="background: {{$logo->back}};">
                                             
                                             <img id="logotip" src="{{$logo->image_path}}" alt="Old Image">
                                         
-                                            <h3 class="brand" class="position-relative rounded-t-lg" style="background-color: {{$logo->back}}; font-size: {{$logo->size}}rem;
+                                            <h3 class="brand" class="position-relative rounded-t-lg" style="background: {{$logo->back}}; font-size: {{$logo->size}}rem;
                                             font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
                                         </div>
                                         

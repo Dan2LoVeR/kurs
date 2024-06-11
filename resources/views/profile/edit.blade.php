@@ -2,14 +2,18 @@
 @section('title', 'Профиль')
 @section('content')
 @include('partials.header')
+<section class="px-4 pt-40 pb-32 relative ">
+            <div class="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat opacity-80 bg-fixed" style="background-image:url(storage/image/back.jpg)"></div>
+             
+            </div>
+          </section>
+          
 
 
-
-
-    <div class="py-12">
+    <div class="py-12 rounded-lg">
         
-       
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 space-y-6">
+        
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 space-y-6 rounded-xl">
             
             
             <div class="p-4 sm:p-8 bg-white/5 shadow sm:rounded-lg">
@@ -170,11 +174,11 @@
                                     height: 170px;
                                 }
                             </style>
-                            <div class="itog" class="shadow-sm pb-10" style="background-color: {{$logo->back}};">
+                            <div class="itog" class="shadow-sm pb-10" style="background: {{$logo->back}};">
                                 
                                 <img id="logotip" src="{{$logo->image_path}}" alt="Old Image">
                             
-                                <h3 class="brand" class="position-relative rounded-t-lg" style="background-color: {{$logo->back}}; font-size: {{$logo->size}}rem;
+                                <h3 class="brand" class="position-relative rounded-t-lg" style="background: {{$logo->back}}; font-size: {{$logo->size}}rem;
                                 font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
                             </div>
                             

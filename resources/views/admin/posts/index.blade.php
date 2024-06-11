@@ -28,7 +28,13 @@
                     <canvas id="myChart"></canvas>
                 </div>
 
-                {{$names}}
+                
+
+
+                
+
+
+
                 
                 <script>
                     var ctx = document.getElementById('myChart').getContext('2d');

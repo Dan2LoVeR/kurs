@@ -106,7 +106,7 @@ class PostController extends Controller
             $img = '/storage/'.$path; 
         }
          
-        else $img = 'img/example/one/'.implode($request->all(['radioi'])) ;
+        else $img = '/img/example/one/'.implode($request->all(['radioi'])) ;
        
            
         
