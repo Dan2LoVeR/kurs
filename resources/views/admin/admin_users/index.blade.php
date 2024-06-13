@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('title', 'Администраторы')
+@section('title', 'Оценки')
 
 @section('content')
     <div class="container mx-auto px-6 py-8">
@@ -13,14 +13,14 @@
     </div>
     <!-- component -->
     
-    <script src="//unpkg.com/alpinejs"></script>
+    
     
 <div x-data="{ 
             openTab: 0,
             activeClasses: 'border-l border-t border-r rounded-t text-indigo-600',
             inactiveClasses: 'text-gray-500 hover:text-indigo-600'
-        }" class="p-6 bg-white">
-    <ul class="flex border-b bg">@foreach ($groups as $group)
+        }" class="p-6 bg-white flex-col">
+    <ul class="flex border-b">@foreach ($groups as $group)
         <li @click="openTab = {{$group->id}}" :class="{ '-mb-px': openTab === {{$group->id}} }" class="-mb-px mr-1">
             <a href="#" :class="openTab === {{$group->id}} ? activeClasses : inactiveClasses"
                 class="bg-white inline-block py-2 px-4 font-semibold ">
@@ -436,6 +436,7 @@
                                             <h3 class="brand" class="position-relative rounded-t-lg" style="background: {{$logo->back}}; font-size: {{$logo->size}}rem;
                                             font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
                                         </div>
+                                        <h3 class="mt-10">{{$user->title}}</h3>
                                         @break
                                         @endif
                                        
@@ -464,8 +465,9 @@
         
     </div>
 </div>
-
+</div></div>
 
 @endsection
+
 
 

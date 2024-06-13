@@ -8,8 +8,12 @@
 	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 </style>
-
-<div class="w-full h-96 flex justify-center items-center">
+<section class="px-4 pt-40 pb-32 relative ">
+  <div class="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat opacity-80 bg-fixed" style="background-image:url(storage/image/back2.png)"></div>
+   
+  </div>
+</section>
+<div class="w-full flex justify-center items-center">
 
     
 </div>
@@ -408,20 +412,79 @@
               <!-- Component End  -->
               
           </div>
-          
+        </div>
       </div>
 
       <div class="flex justify-center items-center my-10">
-
-        <div class="relative inline-flex  group">
-            <div
-                class="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
-            </div>
-            <button type="submit" href="{{route("2test")}}" title="Get quote now"
-                class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-black transition-all duration-200 border-black border-2 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                role="button">→
-            </button>
-        </div>
+      </div>
+      <div class="flex flex-row">
+     
+    </div>
+        <div class="container mx-auto px-4 mt-10">
+          <nav class="flex flex-row flex-nowrap justify-between md:justify-center items-center " aria-label="Pagination">
+              <!-- Previous Page Button -->
+              <a class="flex w-10 h-10 mr-1 justify-center items-center  mr-10"
+                  href="#" title="Previous Page">
+                  <span class="sr-only">Предыдущий тест</span>
+                  <div class="relative inline-flex  bg-white">
+                    <div
+                        class="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
+                    </div>
+                    <button href="{{route("1test")}}" title="Get quote now"
+                        class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-black transition-all duration-200 border-black border-2 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                        role="button">←
+                    </button>
+                </div>
+              </a>
+              <!-- Page Buttons (1 to 5) -->
+              <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white hover:border-gray-300 "
+                  href="{{route("1test")}}" title="Page 1">
+                  1
+              </a>
+              <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white hover:border-gray-300 "
+                  href="{{route("2test")}}" title="Page 2">
+                  2
+              </a>
+              <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white hover:border-gray-300 "
+              href="{{route("3test")}}" aria-current="page" title="Page 3">
+              <button type="submit" class=" w-full h-full" href="{{route("2test")}}">3</button>
+              </a>
+              <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white hover:border-gray-300 "
+                  href="{{route("4test")}}" title="Page 4">
+                  4
+              </a>
+              <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white hover:border-gray-300 "
+                  href="{{route("5test")}}" title="Page 5">
+                  5
+              </a>
+              <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white hover:border-gray-300 "
+                  href="{{route("6test")}}" title="Page 5">
+                  6
+              </a>
+              <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white hover:border-gray-300 "
+                  href="{{route("7test")}}" title="Page 5">
+                  7
+              </a>
+              <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white hover:border-gray-300 "
+                  href="{{route("8test")}}" title="Page 5">
+                  8
+              </a>
+              <!-- Next Page Button -->
+              <a class="flex w-10 h-10 ml-1 justify-center items-center  ml-10"
+                  href="#" title="Next Page">
+                  <span class="sr-only">Следующий тест</span>
+                  <div class="relative inline-flex  group bg-white">
+                    <div
+                        class="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
+                    </div>
+                    <button type="submit" href="{{route("2test")}}" title="Get quote now"
+                        class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-black transition-all duration-200 border-black border-2 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                        role="button">→
+                    </button>
+                </div>
+              </div>
+              </a>
+          </nav>
       </div>
 
       

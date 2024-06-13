@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('title', 'Статьи')
+@section('title', 'Статистика')
 
 @section('content')
     <div class="container mx-auto px-6 py-8">

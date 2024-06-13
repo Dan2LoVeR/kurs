@@ -31,13 +31,11 @@
     
     
 
-    <script>
-        
-        console.log($);
-    </script>
+    
     <script src="/js/taoss.js"></script>
     <script defer src="js/alpine.js"></script>
     
     
 </body>
+
 </html>
