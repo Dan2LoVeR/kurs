@@ -486,5 +486,5 @@
 
 ?> 
 
-@include('partials.footer') 
+
 @endsection

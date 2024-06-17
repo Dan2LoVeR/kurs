@@ -115,7 +115,8 @@ class PostController extends Controller
         $title = $request->all(['title']);
         $font = $request->all(['font']);
         $size = $request->all(['size']);
-        $color = $request->all(['color']);
+        $color = $request->all(['tcolor']);
+        
         Logotips::create(
             [
 

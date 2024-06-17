@@ -159,5 +159,5 @@ Draw();
 </script>
 
 </div>     
-@include('partials.footer') 
+
 @endsection

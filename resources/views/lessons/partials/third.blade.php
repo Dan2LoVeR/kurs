@@ -588,5 +588,5 @@
     }
 </script>   
 
-@include('partials.footer') 
+
 @endsection

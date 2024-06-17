@@ -500,5 +500,5 @@
 
 ?> 
 
-@include('partials.footer') 
+
 @endsection

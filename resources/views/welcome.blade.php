@@ -4,7 +4,7 @@
     
 
   @include('partials.header')
-    
+  
         
   <div class="w-full h-full flex justify-center items-center ">
     <div class="area ">
@@ -29,7 +29,7 @@
     </div>
 
     {{-- В РАМКАХ ЭТОГО КУРСА ВЫ УЗНАЕТЕ --}}
-    <div class="max-w-screen mb-30 px-4 mx-auto mt-8 sm:mt-12 sm:px-6 md:max-w-6xl  delay-[300ms] duration-[600ms] taos:translate-y-[50px] taos:opacity-0  [animation-iteration-count:infinite]" data-taos-offset="30">
+    <div class="max-w-screen mb-30 px-4 mx-auto mt-8 sm:mt-12 sm:px-6 md:max-w-6xl  delay-[300ms] duration-[600ms] taos:translate-y-[100px] taos:opacity-0  [animation-iteration-count:infinite]" data-taos-offset="30">
 
       
   
@@ -74,7 +74,7 @@
             </svg>
             <div class="relative justify-end hidden w-full lg:flex">
                 <div class="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
-                    <img class="object-cover object-center rounded-xl border-4" alt="hero" src="{{asset('storage/image/gr1.jpg')}}">
+                    <img class="object-cover object-center rounded-xl border-4" alt="hero" src="{{asset('storage/image/Eqyes.gif')}}">
                 </div>
             </div>
           </div>
@@ -88,8 +88,8 @@
       
 
     {{-- ПРОВЕРЬ СЕБЯ --}}
-      <section class="px-4 my-30 pt-40 pb-32 relative mt-20">
-        <div class="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat opacity-80 bg-fixed" style="background-image:url(storage/image/back.jpg)"></div>
+      <section class="px-4 my-30 pt-40 pb-32 relative mt-60">
+        <div class="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat opacity-80 bg-fixed" style="background-image:url(storage/image/backg.gif);)"></div>
          
           <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
             
@@ -104,7 +104,7 @@
                 
                 <div class="mt-3 sm:mt-0 sm:ml-3">
                 <div
-                    class="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
+                    class="absolute transitiona-all duration-1000 opacity-90 -inset-px  rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
                 </div>
                 <a href="{{route("1test")}}" title="Get quote now"
                     class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-black transition-all duration-200 border-black border-2 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
@@ -119,7 +119,7 @@
                 
                   <div class="mt-3 sm:mt-0 sm:ml-3">
                   <div
-                      class="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
+                      class="absolute transitiona-all duration-1000 opacity-70 -inset-px  rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
                   </div>
                   <a href="{{route("finish")}}" title="Get quote now"
                       class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-black transition-all duration-200 border-black border-2 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
@@ -141,7 +141,7 @@
       
       
 
-    <div class="my-40">
+    <div class="my-60">
       <h2
       class="mt-1 px-4 mx-auto mt-8 sm:mt-12 sm:px-6 md:max-w-6xl text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl   delay-[300ms] duration-[600ms] taos:translate-x-[-200px] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="30">
       ЧТО ВЫ ПОЛУЧИТЕ ПРОЙДЯ НАШИ КУРСЫ
@@ -218,7 +218,7 @@
             </svg>
             <div class="relative justify-end hidden w-full lg:flex delay-[300ms] duration-[600ms] taos:translate-x-[-200px] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="30">
                 <div class="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
-                    <img class="object-cover object-center rounded-xl border-4" alt="hero" src="{{asset('storage/image/gr2.png')}}">
+                    <img class="object-cover object-center rounded-xl border-4" alt="hero" src="{{asset('storage/image/cikl.gif')}}">
                 </div>
             </div>
           </div>
@@ -331,6 +331,6 @@
 
 
 
-    @include('partials.footer')    
+       
     @endsection
     

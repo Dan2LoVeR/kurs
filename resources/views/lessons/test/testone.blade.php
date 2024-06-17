@@ -36,21 +36,27 @@
             @csrf
             <style>
                 .logotip{
-                   
-                    
+                   position: relative;
+                   width: 170px;
+                   height: 170px;
+                   margin-left: auto;
                 }
                 .brand{
+                    
+                    
                     margin-left: auto;
                     text-align: center;
-                    border-radius:  0 0 20px 20px; 
+                    width: 170px;
 
                 }
                 .itog{
-                    border-radius: 20px 20px 0 0 ; 
-                    margin: auto;
-                    
+                    padding: auto;
                     width: 170px;
-                    height: 170px;
+                    border-radius: 20px ; 
+                    margin-left: 40PX;
+                    
+                    
+                    
                 }
             </style>
             
@@ -59,13 +65,15 @@
                 <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
                     <div class="relative h-full ml-0 mr-0 sm:mr-10">
                         <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded-lg"></span>
-                        <div class="relative h-full p-2 bg-white border-2 border-blue-400 rounded-lg items-center">
+                        <div class="relative h-full p-5 bg-white border-2 border-blue-400 rounded-lg items-center">
                         
-                            <div class="itog" class="shadow-sm">
+                            <div class="itog"  id="itog">
                                 
-                                <img id="logotip" src="img/example/one/shavuha.png" alt="Old Image">
-                            
-                                <h3 class="brand" class="position-relative rounded-t-lg">бренд</h3></img>
+                                <img id="logotip" class="logotip" src="img/example/one/shavuha.png" alt="Old Image">
+                                <p class="brand " id="brand"></p>
+                                </img>
+                                
+                                 
                             </div>
                         
                             
@@ -313,7 +321,7 @@
                                     }
                                 function changeColor(i){
                                     $('.itog').css('background', i);
-                                    $('.brand').css('background', i);
+                                    
                                 }
 
                                 
@@ -370,32 +378,30 @@
                                         <li class="bg-gray-200  hover:bg-gray-400  py-2 px-4 block whitespace-no-wrap"><input type="radio"  name="font" value="Trebuchet MS " onclick="changeFont('Trebuchet MS')" >Trebuchet MS</input></li>
                                         <li class="rounded-b bg-gray-200  hover:bg-gray-400  py-2 px-4 block whitespace-no-wrap"><input type="radio"  class="" name="font" value="Courier monospace"  onclick="changeFont('Courier, monospace')">Courier, monospace</input></li>
                                       </ul>
+                                      
+
+                                      
                                     </div>
-                                  
+                                    <div class="color-picker rounded-lg border-2 mt-4" style="height: 40px; width: 100px;">
+                                        <input class="color-picker__control " type="color"  id="colorWell" name="tcolor"   value="#000" />
+                                        <label class="" for="colorWell">
+                                            <span class="text-xs font-semibold uppercase"></span>
+                                            
+                                        </label>
+                                    </div>
+                                                                            
                                     <div class="w-full mx-4">
                                         
                                         <input id="range" type="range" value="1" max="1.9" min="0.1" step="0.1" name="size" class="block w-full py-2 bg-black text-gray-700 bg-red border border-red-300 rounded-md focus:border-red-700 focus:outline-none focus:ring">
                                     </div>
-
+                                    
 
                                     
                                     <div class="flex flex-auto justify-evenly border rounded-md w-full mx-4 mb-3">
 
-                                    <div class="border-none px-2 py-1 rounded-md w-full text-center" onclick="changeTC('white')">
-                                            <input type="radio" class="hidden" id="searchMCQs" name="color" value="white">
-                                            <label class="cursor-pointer" for="searchMCQs">Белый</label>
-                                        </div>
-                                
-                                        <div class="border-none px-2 py-1 rounded-md w-full text-center" onclick="changeTC('#6B6C6E')">
-                                            <input type="radio" class="hidden" id="searchTopics" name="color" value="#6B6C6E">
-                                            <label class="cursor-pointer" for="searchTopics">Серый</label>
-                                        </div>
-                    
-                                        <div class="border-none px-2 py-1 rounded-md w-full text-center" onclick="changeTC('black')">
-                                            <input type="radio" class="hidden" id="searchCourses" name="color" value="black">
-                                            <label class="cursor-pointer" for="searchCourses">Чёрный</label>
-                                        </div>
-                                
+                                   
+                                        <input class="color-picker__control " type="color"  id="colorT" name="color"    value="" />
+                                        
                                     </div>
                                     
 
@@ -441,7 +447,7 @@
                                 <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
                                     <div class="md:flex">
                                         <div class="w-full p-2">
-                                            <div class="relative border-dotted h-20 rounded-lg border-dashed border-2 border-purple-500 bg-gray-100 flex justify-center items-center">
+                                            <div class="relative border-dotted py-10 rounded-lg border-dashed border-2 border-purple-500 bg-gray-100 flex justify-center items-center">
 
                                 @isset($path)
                                                         
@@ -456,53 +462,24 @@
                                                             file:bg-violet-50 file:text-violet-700
                                                             hover:file:bg-violet-100" name="imglogo" id="logotipc" accept="image/*" onchange="loadFile(event)">
                                                             
-                                                   
+                                                            <script>
+                                                                var loadFile = function(event) {
+                                                                    var output = document.getElementById('logotip');
+                                                                    output.src = URL.createObjectURL(event.target.files[0]);
+                                                                    output.onload = function() {
+                                                                    URL.revokeObjectURL(output.src) // free memory
+                                                                    }
+                                                                };
+                                                                </script>  
                                                     
                     
                                                     
                                                     
-                                                    <script>
-                                                    var loadFile = function(event) {
-                                                        var output = document.getElementById('logotip');
-                                                        output.src = URL.createObjectURL(event.target.files[0]);
-                                                        output.onload = function() {
-                                                        URL.revokeObjectURL(output.src) // free memory
-                                                        }
-                                                    };
-                                                    </script>  
+                                                    
 
                                             </div></div></div></div></form>
 
-                                <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
-                                    <div class="md:flex">
-                                        <div class="w-full p-2">
-                                            <div class="relative border-dotted h-40 rounded-lg border-dashed border-2 border-purple-500 bg-gray-100 flex justify-center items-center">
-                            
-                                              
-                                              
-
-
-
-                                              <form action="{{route('image')}}"  method="post" enctype="multipart/form-data" id="base64">
-                                                {{csrf_field()}}
-                                                <span class="block text-gray-600 font-normal">Прикрепите свой готовый файл логотипа</span>
-                                              <input type="file" id="contenteditable" class="block w-full text-sm text-slate-500
-                                                file:mr-4 file:py-2 file:px-4
-                                                file:rounded-full file:border-0
-                                                file:text-sm file:font-semibold
-                                                file:bg-violet-50 file:text-violet-700
-                                                hover:file:bg-violet-100" name="image">
-                                              
-                                                
-                                                
-                                              <button type="submit" class="tx-8 mt-6 m-auto py-4 w-1/2  text-center bg-purple-500 text-white font-bold rounded-full transition-transform hover:-translate-y-1 hover:shadow-lg">отправить</button>
-                                              
-                                            </form>
-                                             
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -512,143 +489,17 @@
     </div>
             
 
-    <script>
-        document.getElementById('imageInput').addEventListener('paste', function (event) {
-            var items = event.clipboardData.items;
-            for (var i = 0; i < items.length; i++) {
-                if (items[i].type.indexOf('image') !== -1) {
-                    var blob = items[i].getAsFile();
-                    var reader = new FileReader();
-                    reader.onload = function (event) {
-                        // Здесь можно использовать полученные данные (event.target.result)
-                        // Например, отправить на сервер или отобразить на странице
-                        alert('Изображение вставлено:', event.target.result);
-                    };
-                    reader.readAsDataURL(blob);
-                }
-            }
-        });
-    </script>
-
-
-<script type="text/javascript">
-    if (!window.Clipboard) {
-        var pasteCatcher = document.createElement("div");
-
-        pasteCatcher.setAttribute("contenteditable", "");
-
-        pasteCatcher.style.display = "none";
-        document.body.appendChild(pasteCatcher);
-
-        pasteCatcher.focus();
-        document.addEventListener("click", function() { pasteCatcher.focus(); });
-    } 
-    window.addEventListener("paste", pasteHandler);
-
-    function pasteHandler(e) {
-        if (e.clipboardData) {
-            var items = e.clipboardData.items;
-            if (items) {
-                for (var i = 0; i < items.length; i++) {
-                    if (items[i].type.indexOf("image") !== -1) {
-                        var blob = items[i].getAsFile();
-                        var URLObj = window.URL || window.webkitURL;
-                        var source = URLObj.createObjectURL(blob);                
-                        createImage(source);
-                    }
-                }
-            }
-            } else {      
-            setTimeout(checkInput, 1);
-        }
-    }
-
-    function checkInput() {
-        var child = pasteCatcher.childNodes[0];   
-        pasteCatcher.innerHTML = "";    
-        if (child) {
-            if (child.tagName === "IMG") {
-                createImage(child.src);
-            }
-        }
-    }
-
-    function createImage(source) {
-        var pastedImage = new Image();
-        pastedImage.onload = function() {
-            document.getElementById("contenteditable").src = source;
-        }
-        pastedImage.src = source;
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', pastedImage.src, true);
-        xhr.responseType = 'blob';
-        xhr.onload = function(e) {
-            if (this.status == 200) {
-                var reader = new window.FileReader();
-                reader.readAsDataURL(this.response);
-                reader.onloadend = function() {
-                    loadImg(reader.result);
-                }
-            }
-        };
-        xhr.send();
-    }
     
-    function loadImg(dataURL) {
-        var xmlhttp = getXmlHttp();
-        xmlhttp.open('POST', 'compress.php', true);
-        xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xmlhttp.send("a=" + encodeURIComponent(dataURL));
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4) {
-                if(xmlhttp.status == 200) {
-                    document.getElementById("base64").placeholder = xmlhttp.responseText;
-                    document.getElementById("done").src = xmlhttp.responseText;
-                }
-            }
-        };
-    }
+  
 
-    function getXmlHttp() {
-        var xmlhttp;
-        try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {
-            try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); } catch (E) { xmlhttp = false; }
-        }
-        if (!xmlhttp && typeof XMLHttpRequest!='undefined') { xmlhttp = new XMLHttpRequest(); }
-        return xmlhttp;
-    }
-</script>
 
-    
-<script> 
 
-    
-    let list= ["Медецинский центр", "Ресторан быстрого питания", "Сервиса хранения паролей", "Компании на произвольную тему"];
-    let numb = Math.floor(Math.random() * 5)
-    
 
-    let block = document.getElementById('#block');
-    div.before(list[numb], document.createElement('hr'));
-    dish.before(list[numb], document.createElement('hr'));
-    dish.before(list[numb], document.createElement('hr'));
-    
-    
-</script>
 
 
 <script>
 
-let list= ["Медецинский центр", "Ресторан быстрого питания", "Сервиса хранения паролей", "Компании на произвольную тему"];
-    
-    m = 1;
-    n = 4;
-    let res =  Math.floor( Math.random() * (n - m + 1) ) + m;
-    if(res >= 1 && res <= 10) return list[0];
-    else if(res >= 11 && res <= 20) return list[1];
-    return list[2];
-    
-    alert(list[2]);
+
     
 
 
@@ -675,7 +526,36 @@ let list= ["Медецинский центр", "Ресторан быстрог
     }
 </script>   
 
+<script>
+    var colorWell;
+    var defaultColor = "#ffffff";
+
+    window.addEventListener("load", startup, false);
+
+    function startup() {
+    colorWell = document.querySelector("#colorWell");
+    colorWell.value = defaultColor;
+    colorWell.addEventListener("input", updateFirst, false);
+    colorWell.addEventListener("change", updateAll, false);
+    colorWell.select();
+    }
+
+    function updateFirst(event) {
+    var brand = document.querySelector("#brand");
+
+    if (itog) {
+        brand.style.color = event.target.value;
+    }
+    }
+
+    function updateAll(event) {
+    document.querySelectorAll("#brand").forEach(function (itog) {
+        brand.style.color = event.target.value;
+    });
+    }
+   </script>
+
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 
-@include('partials.footer') 
+
 @endsection

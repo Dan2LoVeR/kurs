@@ -234,7 +234,7 @@
                                 
                                 <img id="logotip" src="{{$logo->image_path}}" alt="Old Image">
                             
-                                <h3 class="brand" class="position-relative rounded-t-lg" style="background: {{$logo->back}}; font-size: {{$logo->size}}rem;
+                                <h3 class="brand" class="position-relative rounded-t-lg" style="padding-top:10px; padding-bottom:10px; background: {{$logo->back}}; font-size: {{$logo->size}}rem;
                                 font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
                             </div>
                             @break
@@ -433,10 +433,9 @@
                                             
                                             <img id="logotip" src="{{$logo->image_path}}" alt="Old Image">
                                         
-                                            <h3 class="brand" class="position-relative rounded-t-lg" style="background: {{$logo->back}}; font-size: {{$logo->size}}rem;
+                                            <h3 class="brand" class="position-relative rounded-t-lg" style="padding-top:10px; padding-bottom:10px; background: {{$logo->back}}; font-size: {{$logo->size}}rem;
                                             font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
                                         </div>
-                                        <h3 class="mt-10">{{$user->title}}</h3>
                                         @break
                                         @endif
                                        

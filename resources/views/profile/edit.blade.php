@@ -3,7 +3,7 @@
 @section('content')
 @include('partials.header')
 <section class="px-4 pt-40 pb-32 relative ">
-            <div class="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat opacity-80 bg-fixed" style="background-image:url(storage/image/back.jpg)"></div>
+            <div class="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat opacity-80 bg-fixed" style="background-image:url(storage/image/backg.gif)"></div>
              
             </div>
           </section>
@@ -151,36 +151,47 @@
 
                         
 
-                        <td class=" whitespace-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium ">
+                        <td class=" whitespace-wrap text-right relative h-full border-b border-gray-200 text-sm leading-5 font-medium ">
                             
                             @foreach ($logotips as $logo)
                             @if ($logo->user_id == $user->id)
                             <style>
                                 .logotip{
-                                    padding: 5px;
-                        
+                                   position: relative;
+                                   width: 170px;
+                                   height: 170px;
+                                   margin-left: auto;
                                 }
                                 .brand{
+                                    
+                                    border-radius: 0px 0 20px 20px;
                                     margin-left: auto;
                                     text-align: center;
-                                    border-radius:  0 0 20px 20px; 
-                                    
+                                    width: 170px;
+                
                                 }
                                 .itog{
-                                    border-radius: 20px 20px 0 0 ; 
-                                    margin: auto;
-                                    
+                                    padding: auto;
                                     width: 170px;
-                                    height: 170px;
+                                    border-radius: 20px ; 
+                                    margin-left: 40PX;
+                                    
+                                    
+                                    
                                 }
                             </style>
-                            <div class="itog" class="shadow-sm pb-10" style="background: {{$logo->back}};">
+
+                            <div class="itog"  id="itog" style="background: {{$logo->back}};">
+                                                            
+                                <img id="logotip" class="logotip" src="{{$logo->image_path}}" alt="Old Image">
+                                <p class="brand " id="brand" style="margin-top:10px; padding-bottom:10px; background: {{$logo->back}}; font-size: {{$logo->size}}rem;
+                                font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</p>
+                                </img>
+
                                 
-                                <img id="logotip" src="{{$logo->image_path}}" alt="Old Image">
-                            
-                                <h3 class="brand" class="position-relative rounded-t-lg" style="background: {{$logo->back}}; font-size: {{$logo->size}}rem;
-                                font-family: {{$logo->font}}; color: {{$logo->color}}">{{$logo->title}}</h3></img>
+                                
                             </div>
+                            
                             
                             @endif
                             @break
@@ -203,14 +214,10 @@
 
             
 
-            <div class="p-4 sm:p-8 bg-white/5 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('partials.delete-user-form')
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
 
 
-    @include('partials.footer') 
+    
