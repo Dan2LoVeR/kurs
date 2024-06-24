@@ -45,20 +45,20 @@ class PostController extends Controller
     
     public function grades( Request $request)
     {
-        
+        //составление массива из оценок
         $numb = array_sum( array( intval($request->f),intval($request->s),intval($request->t),intval($request->fo),intval($request->fi),intval($request->si)));
         
         if($numb==1 or $numb==2 or $numb==0)$result=2;
         elseif($numb==3)$result=3;
         elseif($numb==4 or $numb==5)$result=4;
         else $result=5;
-
+        //создание экземпляра в бд
         Grades::create([
             'name'=>$request->name,
             'result'=>$result,
             'user_id' => auth()->id()
         ]);
-
+        //переадресация
         $count = intval($request->name)+1;
         return redirect(route(strval($count).'test'));
     }
